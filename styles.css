@@ -82,7 +82,7 @@ h2 {
   color: hsl(0, 0%, 100%);
 }
 
-.subtitle img {
+.arrow-down {
   margin-top: 50px;
   margin-bottom: 140px;
 }
@@ -267,4 +267,64 @@ footer h3 img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.arrow-down {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: arrow-down;
+  animation-timing-function: linear;
+}
+@keyframes arrow-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.menu {
+  position: absolute;
+  inset: 0;
+  margin: 60px auto 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 300px;
+  max-height: 300px;
+  font-family: "Barlow", sans-serif;
+  color: hsl(232, 10%, 55%);
+  font-size: 17px;
+  line-height: 30px;
+
+  visibility: hidden;
+  
+}
+
+.menu nav:last-child {
+  padding: 10px 25px;
+  border-radius: 20px;
+  background-color: hsl(51, 100%, 49%);
+  font-family: "Fraunces", serif;
+  color: black;
+  font-size: 15px;
+}
+
+.menu nav:hover {
+  color: black;
+}
+
+@keyframes menu {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px);
+  }
 }
