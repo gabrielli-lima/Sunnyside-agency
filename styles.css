@@ -287,24 +287,29 @@ footer h3 img {
   }
 }
 
-.menu {
+.menuContainer {
   position: absolute;
   inset: 0;
-  margin: 60px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+}
+
+.menu {
+  position: relative;
+  margin: 0 auto 0;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  max-width: 300px;
-  max-height: 300px;
+  width: 300px;
+  height: 271px;
   font-family: "Barlow", sans-serif;
   color: hsl(232, 10%, 55%);
   font-size: 17px;
   line-height: 30px;
-
-  visibility: hidden;
-  
 }
 
 .menu nav:last-child {
@@ -320,11 +325,32 @@ footer h3 img {
   color: black;
 }
 
-@keyframes menu {
+@keyframes menu-open {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(60px);
   }
+}
+
+@keyframes menu-close {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+
+  }
+}
+
+.triangle {
+  width: 300px;
+  height: 20px;
+  margin-top: 60px;
+  border-top: 25px solid transparent;
+  border-bottom: -25px solid transparent;
+  border-right: 25px solid white;
 }
