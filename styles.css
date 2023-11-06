@@ -3,66 +3,10 @@
   box-sizing: border-box;
 }
 
-.imgs {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   padding: 40px 30px;
-}
-
-@media (max-width: 750px) {
-  .image-header {
-    background-image: url("./assets/mobile/image-header.jpg");
-    width: 100%;
-  }
-
-  .image-transform {
-    background-image: url("./assets/mobile/image-transform.jpg");
-    width: 100%;
-    height: 320px;
-  }
-  .image-stand-out {
-    background-image: url("./assets/mobile/image-stand-out.jpg");
-    width: 100%;
-    height: 320px;
-  }
-
-  .image-graphic-design {
-    background-image: url("./assets/mobile/image-graphic-design.jpg");
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-  }
-
-  .image-photography {
-    background-image: url("./assets/mobile/image-photography.jpg");
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-  }
-
-  /* --- GALLERY --- */
-
-  .milkbottles {
-    background-image: url("./assets/mobile/image-gallery-milkbottles.jpg");
-  }
-
-  .img-orange {
-    background-image: url("./assets/mobile/image-gallery-orange.jpg");
-  }
-
-  .cone {
-    background-image: url("./assets/mobile/image-gallery-cone.jpg");
-  }
-
-  .sugar-cubes {
-    background-image: url("./assets/mobile/image-gallery-sugar-cubes.jpg");
-  }
 }
 
 .subtitle {
@@ -82,17 +26,28 @@ h2 {
   color: hsl(0, 0%, 100%);
 }
 
+.imgs {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.image-header {
+  background-image: url("./assets/image-header.jpg");
+  width: 100%;
+}
+
 .arrow-down {
+  height: 70px;
+  width: 20px;
   margin-top: 50px;
-  margin-bottom: 140px;
+  margin-bottom: 300px;
 }
 
 /* ----------------------- */
 
 main {
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 main section {
@@ -179,6 +134,49 @@ strong {
   color: hsl(198, 62%, 26%);
 }
 
+.container-transform {
+  display: flex;
+}
+
+.container-transform section {
+  flex: 1;
+}
+
+.image-transform {
+  background-image: url("./assets/image-transform.jpg");
+  flex: 1;
+}
+
+.container-stand-out {
+  display: flex;
+}
+
+.container-stand-out section {
+  flex: 1;
+}
+
+.image-stand-out {
+  background-image: url("./assets/image-stand-out.jpg");
+  flex: 1;
+}
+
+.container-graphic-design-photography{
+  display: flex;
+}
+
+.image-graphic-design {
+  background-image: url("./assets/image-graphic-design.jpg");
+  flex: 1;
+    height: 100vh;
+    background-size: cover;
+}
+
+.image-photography {
+  background-image: url("./assets/image-photography.jpg");
+  flex: 1;
+  width: 100%;
+}
+
 aside {
   text-align: center;
   font-family: "Barlow", sans-serif;
@@ -222,12 +220,6 @@ aside span {
   grid-template-rows: 1fr 1fr;
   gap: 0;
   height: 300px;
-}
-
-.gallery-item {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /* --- FOOOTER --- */
@@ -275,6 +267,7 @@ footer h3 img {
   animation-name: arrow-down;
   animation-timing-function: linear;
 }
+
 @keyframes arrow-down {
   0% {
     transform: translateY(0);
@@ -342,7 +335,6 @@ footer h3 img {
   100% {
     transform: translateY(-60px);
     opacity: 0;
-
   }
 }
 
@@ -353,4 +345,80 @@ footer h3 img {
   border-top: 25px solid transparent;
   border-bottom: -25px solid transparent;
   border-right: 25px solid white;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media (max-width: 750px) {
+  .arrow-down {
+    height: auto;
+    width: auto;
+    margin-top: 50px;
+    margin-bottom: 140px;
+  }
+
+  .image-header {
+    background-image: url("./assets/mobile/image-header.jpg");
+    width: 100%;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+
+  main section {
+    flex: 0 0 100%;
+  }
+
+  .container-transform {
+    display: unset;
+  }
+
+  .container-stand-out {
+    display: unset;
+  }
+
+  .image-transform {
+    background-image: url("./assets/mobile/image-transform.jpg");
+    width: 100%;
+    height: 320px;
+  }
+
+  .image-stand-out {
+    background-image: url("./assets/mobile/image-stand-out.jpg");
+    width: 100%;
+    height: 320px;
+  }
+
+  .image-graphic-design {
+    background-image: url("./assets/mobile/image-graphic-design.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+  }
+
+  .image-photography {
+    background-image: url("./assets/mobile/image-photography.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+  }
+
+  /* --- GALLERY --- */
+
+  .milkbottles {
+    background-image: url("./assets/mobile/image-gallery-milkbottles.jpg");
+  }
+
+  .img-orange {
+    background-image: url("./assets/mobile/image-gallery-orange.jpg");
+  }
+
+  .cone {
+    background-image: url("./assets/mobile/image-gallery-cone.jpg");
+  }
+
+  .sugar-cubes {
+    background-image: url("./assets/mobile/image-gallery-sugar-cubes.jpg");
+  }
 }
