@@ -9,6 +9,39 @@ header {
   padding: 40px 30px;
 }
 
+.menu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 50px;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  line-height: 30px;
+}
+
+.menu nav:last-child {
+  padding: 10px 25px;
+  border-radius: 50px;
+  background-color: white;
+  font-family: "Fraunces", serif;
+  color: black;
+  font-size: 15px;
+}
+
+.menu nav:hover {
+  color: hsl(51, 100%, 49%);
+}
+
+.menu nav:last-child:hover {
+  color: white;
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+#iconMenu,
+.menuContainer {
+  display: none;
+}
+
 .subtitle {
   display: flex;
   flex-direction: column;
@@ -29,7 +62,7 @@ h2 {
 .imgs {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
 }
 
 .image-header {
@@ -101,8 +134,8 @@ strong {
   border-radius: 10px;
 }
 
-.light-orange {
-  background-color: hsl(10, 100%, 90%);
+.text-learnMore a{
+  text-decoration: none;
 }
 
 .image-graphic-design {
@@ -144,6 +177,14 @@ strong {
   flex: 1;
 }
 
+.container-transform .text-highlight{
+  background-color: hsl(51, 100%, 90%);
+}
+
+.container-transform .text-highlight:hover{
+  background-color: hsl(51, 100%, 49%);
+}
+
 .image-transform {
   background-image: url("./assets/image-transform.jpg");
   flex: 1;
@@ -155,6 +196,14 @@ strong {
 
 .container-stand-out section {
   flex: 1;
+}
+
+.container-stand-out .text-highlight{
+  background-color: hsl(9, 99%, 90%);
+}
+
+.container-stand-out .text-highlight:hover{
+  background-color: hsl(7, 99%, 70%);
 }
 
 .image-stand-out {
@@ -238,7 +287,6 @@ aside span {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-
 }
 
 /* --- GALLERY --- */
@@ -247,7 +295,7 @@ aside span {
   background-image: url("./assets/image-gallery-milkbottles.jpg");
   background-color: rgb(42, 247, 247);
   height: 100%;
-width: 100%;
+  width: 100%;
 }
 
 .img-orange {
@@ -310,6 +358,10 @@ footer h3 img {
   align-items: center;
 }
 
+footer nav:hover{
+  color:white;
+}
+
 .arrow-down {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -326,73 +378,6 @@ footer h3 img {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-.menuContainer {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  visibility: hidden;
-}
-
-.menu {
-  position: relative;
-  margin: 0 auto 0;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 300px;
-  height: 271px;
-  font-family: "Barlow", sans-serif;
-  color: hsl(232, 10%, 55%);
-  font-size: 17px;
-  line-height: 30px;
-}
-
-.triangle {
-  width: 300px;
-  height: 20px;
-  margin-top: 60px;
-  border-top: 25px solid transparent;
-  border-bottom: -25px solid transparent;
-  border-right: 25px solid white;
-}
-
-.menu nav:last-child {
-  padding: 10px 25px;
-  border-radius: 20px;
-  background-color: hsl(51, 100%, 49%);
-  font-family: "Fraunces", serif;
-  color: black;
-  font-size: 15px;
-}
-
-.menu nav:hover {
-  color: black;
-}
-
-@keyframes menu-open {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(60px);
-  }
-}
-
-@keyframes menu-close {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-60px);
-    opacity: 0;
   }
 }
 
@@ -498,7 +483,7 @@ footer h3 img {
     gap: 0;
     height: 300px;
   }
-  
+
   .milkbottles {
     background-image: url("./assets/mobile/image-gallery-milkbottles.jpg");
   }
@@ -513,5 +498,80 @@ footer h3 img {
 
   .sugar-cubes {
     background-image: url("./assets/mobile/image-gallery-sugar-cubes.jpg");
+  }
+
+  .menu {
+    display: none;
+  }
+
+  #iconMenu {
+    display: block;
+  }
+
+  .menuContainer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+  }
+
+  .menuHamburger {
+    position: relative;
+    margin: 0 auto 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 271px;
+    font-family: "Barlow", sans-serif;
+    color: hsl(232, 10%, 55%);
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .triangle {
+    width: 300px;
+    height: 20px;
+    margin-top: 60px;
+    border-top: 25px solid transparent;
+    border-bottom: -25px solid transparent;
+    border-right: 25px solid white;
+  }
+
+  .menuHamburger nav:last-child {
+    padding: 10px 25px;
+    border-radius: 50px;
+    background-color: hsl(51, 100%, 49%);
+    font-family: "Fraunces", serif;
+    color: black;
+    font-size: 15px;
+  }
+
+  .menuHamburger nav:hover {
+    color: black;
+  }
+
+  @keyframes menu-open {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(60px);
+    }
+  }
+
+  @keyframes menu-close {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-60px);
+      opacity: 0;
+    }
   }
 }
