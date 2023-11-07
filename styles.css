@@ -44,18 +44,19 @@ h2 {
   margin-bottom: 300px;
 }
 
-/* ----------------------- */
+/* --- MAIN --- */
 
 main {
-  text-align: center;
+  text-align: left;
 }
 
 main section {
-  padding: 60px 30px;
+  padding: 180px 120px;
+  max-width: 50%;
 }
 
 main h3 {
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Fraunces", serif;
   font-weight: 900;
   font-style: bold;
@@ -125,7 +126,7 @@ strong {
 
 .image-photography section {
   bottom: 0;
-  padding: 60px 12px 0;
+  padding: 0 70px 0;
   position: absolute;
 }
 
@@ -136,6 +137,7 @@ strong {
 
 .container-transform {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .container-transform section {
@@ -160,28 +162,40 @@ strong {
   flex: 1;
 }
 
-.container-graphic-design-photography{
+.container-graphic-design-photography {
   display: flex;
+  height: 100vh;
+  text-align: center;
+}
+
+.container-graphic-design-photography section {
+  max-width: unset;
+  padding: 10px 140px;
 }
 
 .image-graphic-design {
   background-image: url("./assets/image-graphic-design.jpg");
   flex: 1;
-    height: 100vh;
-    background-size: cover;
 }
 
 .image-photography {
   background-image: url("./assets/image-photography.jpg");
   flex: 1;
-  width: 100%;
 }
+
+/* --- CLIENT TESTIMONIALS --- */
 
 aside {
   text-align: center;
   font-family: "Barlow", sans-serif;
   color: hsl(210, 4%, 67%);
-  padding: 0 40px 80px;
+  padding: 150px;
+}
+
+.client-testimonials {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 aside div {
@@ -193,7 +207,6 @@ aside div {
 
 aside h4 {
   font-weight: 900;
-  margin-top: 50px;
   letter-spacing: 3px;
   font-family: "Fraunces", serif;
 }
@@ -201,12 +214,13 @@ aside h4 {
 aside img {
   border-radius: 100%;
   width: 50px;
-  margin: 50px 0 20px;
+  margin: 50px 0;
 }
 
 aside p {
   color: hsl(213, 9%, 39%);
   line-height: 30px;
+  margin-bottom: 30px;
 }
 
 aside span {
@@ -215,11 +229,46 @@ aside span {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  background-color: rgb(46, 146, 146);
   gap: 0;
-  height: 300px;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
+/* --- GALLERY --- */
+
+.milkbottles {
+  background-image: url("./assets/image-gallery-milkbottles.jpg");
+  background-color: rgb(42, 247, 247);
+  height: 100%;
+width: 100%;
+}
+
+.img-orange {
+  background-image: url("./assets/image-gallery-orange.jpg");
+  background-color: rgb(42, 247, 247);
+  height: 100%;
+  width: 100%;
+}
+
+.cone {
+  background-image: url("./assets/image-gallery-cone.jpg");
+  background-color: rgb(42, 247, 247);
+  height: 100%;
+  width: 100%;
+}
+
+.sugar-cubes {
+  background-image: url("./assets/image-gallery-sugarcubes.jpg");
+  background-color: rgb(42, 247, 247);
+  height: 100%;
+  width: 100%;
 }
 
 /* --- FOOOTER --- */
@@ -305,6 +354,15 @@ footer h3 img {
   line-height: 30px;
 }
 
+.triangle {
+  width: 300px;
+  height: 20px;
+  margin-top: 60px;
+  border-top: 25px solid transparent;
+  border-bottom: -25px solid transparent;
+  border-right: 25px solid white;
+}
+
 .menu nav:last-child {
   padding: 10px 25px;
   border-radius: 20px;
@@ -338,15 +396,6 @@ footer h3 img {
   }
 }
 
-.triangle {
-  width: 300px;
-  height: 20px;
-  margin-top: 60px;
-  border-top: 25px solid transparent;
-  border-bottom: -25px solid transparent;
-  border-right: 25px solid white;
-}
-
 /* --- MEDIA QUERIES --- */
 
 @media (max-width: 750px) {
@@ -364,10 +413,17 @@ footer h3 img {
 
   main {
     flex-wrap: wrap;
+    text-align: center;
   }
 
   main section {
     flex: 0 0 100%;
+    padding: 60px 30px;
+    max-width: 100%;
+  }
+
+  main h3 {
+    font-size: 30px;
   }
 
   .container-transform {
@@ -404,8 +460,45 @@ footer h3 img {
     background-size: cover;
   }
 
+  .container-graphic-design-photography {
+    display: unset;
+  }
+
+  .container-graphic-design-photography section {
+    max-width: unset;
+    padding: 0 15px;
+  }
+
+  /* --- CLIENT TESTIMONIALS --- */
+
+  aside {
+    padding: 50px 40px 80px;
+  }
+
+  aside img {
+    margin: 50px 0 20px;
+  }
+
+  aside p {
+    margin-bottom: 0;
+  }
+
+  .client-testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
   /* --- GALLERY --- */
 
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    height: 300px;
+  }
+  
   .milkbottles {
     background-image: url("./assets/mobile/image-gallery-milkbottles.jpg");
   }
